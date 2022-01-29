@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/calanderFragment">
+
+    <fragment
+        android:id="@+id/calanderFragment"
+        android:name="com.example.diacry.calanderFragment"
+        android:label="fragment_calander"
+        tools:layout="@layout/fragment_calander" />
+    <fragment
+        android:id="@+id/tipsFragment"
+        android:name="com.example.diacry.tipsFragment"
+        android:label="fragment_tips"
+        tools:layout="@layout/fragment_tips" />
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.diacry.statsFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" />
+</navigation>
