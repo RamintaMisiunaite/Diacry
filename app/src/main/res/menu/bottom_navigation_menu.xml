@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/page_1"
+        android:id="@+id/tipsFragment"
         android:enabled="true"
         android:icon="@drawable/ic_tips"
         android:title="Guidance"/>
     <item
-        android:id="@+id/page_2"
+        android:id="@+id/calanderFragment"
         android:enabled="true"
         android:icon="@drawable/ic_calander"
         android:title="Calander"
         />
     <item
-        android:id="@+id/page_3"
+        android:id="@+id/statsFragment"
         android:enabled="true"
         android:icon="@drawable/ic_insights"
         android:title="Insights"
