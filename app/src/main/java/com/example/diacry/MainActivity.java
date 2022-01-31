@@ -25,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
                 openRegisterActivity();
             }
         });
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLoginActivity();
+            }
+        });
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openRegisterActivity(){
         Intent intent = new Intent(this, registerActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void openLoginActivity(){
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }
