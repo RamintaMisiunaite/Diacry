@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Diacry">
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".DayActivity"
             android:exported="false" />
@@ -20,7 +20,7 @@
             android:exported="false" />
         <activity
             android:name=".registerActivity"
-            android:exported="false" />
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
