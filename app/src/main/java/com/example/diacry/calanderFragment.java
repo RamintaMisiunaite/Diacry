@@ -1,12 +1,26 @@
 package com.example.diacry;
 
+import android.app.ActionBar;
+import android.content.Context;
+import android.graphics.Color;
+import com.github.sundeepk.compactcalendarview.domain.Event;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +28,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class calanderFragment extends Fragment {
+
+    CompactCalendarView compactCalendar;
+    private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +76,18 @@ public class calanderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calander, container, false);
+        View view = inflater.inflate(R.layout.fragment_calander, container, false);
+//        mPresenter.onAttach(calanderFragment.this);
+
+        compactCalendar = view.findViewById(R.id.compactcalendar_view);
+        compactCalendar.setUseThreeLetterAbbreviation(true);
+
+        //Set an event for Teachers' Professional Day 2016 which is 21st of October
+
+        Event ev1 = new Event(Color.parseColor("#613DC1"), 1643556000000L, "Teachers' Professional Day");
+        compactCalendar.addEvent(ev1);
+
+
+        return view;
     }
 }

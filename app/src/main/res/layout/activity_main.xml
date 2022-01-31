@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:background="@color/grey"
     >
 
     <ImageView
@@ -28,6 +29,7 @@
         android:layout_marginTop="450dp"
         android:layout_marginHorizontal="30dp">
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/registerBt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register"
@@ -35,6 +37,7 @@
             android:layout_marginVertical="10dp"
             />
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginBt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log in"
@@ -45,6 +48,13 @@
             android:layout_height="wrap_content"
             android:text="home"
             android:background="@color/blue"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/daybt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="home"
+            android:background="@color/white"
+            />
 
     </LinearLayout>
 
