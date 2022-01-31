@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "110748239240",
+    "project_id": "diacry-4ee1b",
+    "storage_bucket": "diacry-4ee1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110748239240:android:b5d243e1dea88dcc13a63d",
+        "android_client_info": {
+          "package_name": "com.example.diacry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110748239240-dmjjodp63a7cnfp9rmh33d7k4vv9jrii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOyENjgAOP_Za30bh2mPN55TOROjkryAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110748239240-dmjjodp63a7cnfp9rmh33d7k4vv9jrii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
