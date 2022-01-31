@@ -8,76 +8,80 @@
     android:orientation="vertical"
     android:background="@color/grey">
 
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/flag"
-        android:layout_marginRight="200dp"
-        android:layout_marginLeft="-10dp"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tv_container"
-        android:text="sdijicnsdjcn"
-        android:layout_marginTop="50dp"
-        android:paddingVertical="20dp"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingVertical="20dp">
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="90dp"
-            android:background="@drawable/round_button"
-            android:src="@drawable/tear1"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="15dp"
-            android:paddingVertical="10dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/flag"
+            android:layout_marginRight="200dp"
+            android:layout_marginLeft="-10dp"
             />
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="90dp"
-            android:background="@drawable/round_button"
-            android:src="@drawable/tear2"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="15dp"
-            android:paddingVertical="10dp"
-            />
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="90dp"
-            android:background="@drawable/round_button"
-            android:src="@drawable/tear3"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="15dp"
-            android:paddingVertical="10dp"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tv_container"
+            android:text="sdijicnsdjcn"
+            android:layout_marginTop="50dp"
+            android:paddingVertical="20dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/black"
             />
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="20dp">
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:background="@drawable/round_button"
+                android:src="@drawable/tear1"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="15dp"
+                android:paddingVertical="10dp"
+                />
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:background="@drawable/round_button"
+                android:src="@drawable/tear2"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="15dp"
+                android:paddingVertical="10dp"
+                />
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:background="@drawable/round_button"
+                android:src="@drawable/tear3"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="15dp"
+                android:paddingVertical="10dp"
+                />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tv_container"
-        android:text="Add notes"
-        android:paddingVertical="20dp"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tv_container"
+            android:text="Add notes"
+            android:paddingVertical="20dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            />
+    </ScrollView>
 
 
 
