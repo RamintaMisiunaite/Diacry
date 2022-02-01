@@ -22,7 +22,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="250dp">
             <View
                 android:layout_width="match_parent"
@@ -32,43 +32,56 @@
                 android:layout_marginHorizontal="10dp"
                 />
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/usernameTv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Username:"
                 android:layout_marginTop="50dp"
-                android:layout_marginHorizontal="25dp"
-                android:textSize="17sp"
-                android:textColor="@color/black"
-                />
-            <EditText
-                android:id="@+id/usernameEt"
+                android:layout_marginHorizontal="25dp">
+                <EditText
+                    android:id="@+id/usernameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/usernameTv"
+                    android:background="@color/transparent"
+                    android:hint="Username"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                app:passwordToggleEnabled="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/usernameTv"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="-5dp"
-                />
-            <TextView
                 android:id="@+id/pswTv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email:"
+                android:layout_below="@+id/usernameTv"
                 android:layout_marginHorizontal="25dp"
-                android:textSize="17sp"
-                android:textColor="@color/black"
-                android:layout_below="@id/usernameEt"
-                />
-            <EditText
-                android:id="@+id/pswEt"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/pswEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pswTv"
+                    android:inputType="textPassword"
+                    android:background="@color/transparent"
+                    android:hint="Password"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/reg_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pswTv"
-                android:inputType="textPassword"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="-5dp"
-                />
+                android:layout_marginHorizontal="50dp"
+                android:background="@color/transparent"
+                android:layout_marginTop="3dp"
+                android:text="Don't have an account yet? Sign up "
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
         </RelativeLayout>
 
         <Button
