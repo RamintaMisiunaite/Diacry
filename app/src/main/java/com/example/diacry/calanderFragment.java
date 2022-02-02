@@ -30,6 +30,7 @@ import java.util.Locale;
 public class calanderFragment extends Fragment {
 
     CompactCalendarView compactCalendar;
+    Context context;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
 
     // TODO: Rename parameter arguments, choose names that match
@@ -70,6 +71,8 @@ public class calanderFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -77,7 +80,6 @@ public class calanderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_calander, container, false);
-//        mPresenter.onAttach(calanderFragment.this);
 
         compactCalendar = view.findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
@@ -86,6 +88,20 @@ public class calanderFragment extends Fragment {
 
         Event ev1 = new Event(Color.parseColor("#613DC1"), 1643556000000L, "Teachers' Professional Day");
         compactCalendar.addEvent(ev1);
+
+        compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+            @Override
+            public void onDayClick(Date dateClicked) {
+                Toast.makeText(getActivity(), "day", Toast.LENGTH_SHORT).show();
+                // actual functionality
+            }
+
+            @Override
+            public void onMonthScroll(Date firstDayOfNewMonth) {
+                Toast.makeText(getActivity(), "month", Toast.LENGTH_SHORT).show();
+                // actual functionality
+            }
+        });
 
 
         return view;

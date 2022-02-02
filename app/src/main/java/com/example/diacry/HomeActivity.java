@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            getSupportActionBar().setTitle("");
+            getSupportActionBar().setTitle("Calander");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeButtonEnabled(true);
         }
@@ -69,12 +69,14 @@ public class HomeActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.tipsFragment:
                         selectedFragment = new tipsFragment();
+                        getSupportActionBar().setTitle("Tips");
                         break;
                     case R.id.calanderFragment:
                         selectedFragment = new calanderFragment();
                         break;
                     case R.id.statsFragment:
                         selectedFragment = new statsFragment();
+                        getSupportActionBar().setTitle("Insight");
                         break;
                 }
 
