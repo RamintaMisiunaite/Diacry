@@ -39,12 +39,12 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginHorizontal="25dp">
                 <EditText
-                    android:id="@+id/usernameEt"
+                    android:id="@+id/emailEt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/usernameTv"
                     android:background="@color/transparent"
-                    android:hint="Username"
+                    android:hint="Email"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     />
@@ -71,7 +71,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/reg_login"
+                android:id="@+id/login_reg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pswTv"
@@ -87,6 +87,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/submit_login"
             android:text="Submit"
             android:layout_marginTop="-150dp"
             android:textSize="15sp"

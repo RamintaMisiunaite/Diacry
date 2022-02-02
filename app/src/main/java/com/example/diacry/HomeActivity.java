@@ -1,6 +1,7 @@
 package com.example.diacry;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -10,12 +11,15 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -29,6 +33,13 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            getSupportActionBar().setTitle("");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeButtonEnabled(true);
+        }
+
         drawerLayout = findViewById(R.id.drawerLayout);
         navView = findViewById(R.id.nav_view);
         context = getApplicationContext();
@@ -37,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
         bottom_menu.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment,
-                new calanderFragment()).commit();   // kodel sviecia pirmas menu choice sviecia
+                new calanderFragment()).commit();
 
         toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
@@ -97,11 +108,16 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText(context, "option2", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.drawer_3:
-                    Toast.makeText(context, "option3", Toast.LENGTH_SHORT).show();
+                    logout();
                     break;
             }
 
             return true;
         }
     };
+    public void logout(){
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        finish();
+    }
 }
