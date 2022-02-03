@@ -26,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         register = findViewById(R.id.registerBt);
         login = findViewById(R.id.loginBt);
-        home = findViewById(R.id.homebt);
-        day = findViewById(R.id.daybt);
+
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,30 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 openLoginActivity();
             }
         });
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openHomeActivity();
-            }
-        });
-        day.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDayActivity();
-            }
-        });
     }
 
-    public void openHomeActivity(){
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-        finish();
-    }
-    public void openDayActivity(){
-        Intent intent = new Intent(this, DayActivity.class);
-        startActivity(intent);
-        finish();
-    }
     public void openRegisterActivity(){
         Intent intent = new Intent(this, registerActivity.class);
         startActivity(intent);

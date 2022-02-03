@@ -24,14 +24,11 @@ public class registerActivity extends AppCompatActivity {
 
     TextInputEditText usernameEt, emailEt, pswEt, conf_pswEt;
     String usernameHolder, emailHolder, pswHolder;
-    Button submit;
+    Button submit, redirectToLogin;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
 
-//    public static Intent getStartIntent(Context context){
-//        Intent intent = new Intent(context, registerActivity.class);
-//        return intent;
-//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +48,7 @@ public class registerActivity extends AppCompatActivity {
         pswEt = findViewById(R.id.pswEt);
         conf_pswEt = findViewById(R.id.pswConfEt);
         submit = findViewById(R.id.submitBt);
+        redirectToLogin = findViewById(R.id.reg_login);
         fAuth = FirebaseAuth.getInstance();
 
         DAOUser dao = new DAOUser();
@@ -60,30 +58,13 @@ public class registerActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),HomeActivity.class));
             finish();
         }
-//
-//        if (!isUserLoggedIn)
-//        {
-//            setTheme(R.style.AppTheme)
-//            setContentView(R.layout.activity_login)
-//        }
-//        else {
-//            //Navigate to Main Activity
-//        }
+
 
         submit.setOnClickListener(v -> {
 
             usernameHolder = usernameEt.getText().toString();
             emailHolder = emailEt.getText().toString();
             pswHolder = pswEt.getText().toString();
-
-//            if(checkFields(usernameEt, emailEt,pswEt, conf_pswEt)){
-//                User user = new User(usernameHolder, emailHolder,pswHolder);
-//                dao.add(user).addOnSuccessListener(suc -> {
-//                    Toast.makeText(this, "User is inserted", Toast.LENGTH_SHORT).show();
-//                }).addOnFailureListener(er -> {
-//                    Toast.makeText(this, ""+er.getMessage(), Toast.LENGTH_SHORT).show();
-//                });
-//            }
 
 
             // register user in firebase
@@ -110,6 +91,15 @@ public class registerActivity extends AppCompatActivity {
                 }
             });
         });
+
+        redirectToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLoginPage();
+            }
+        });
+
+
     }
 
     private boolean checkFields(EditText username,EditText email, EditText password, EditText confPsw){
@@ -146,6 +136,12 @@ public class registerActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    public void openLoginPage(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
 

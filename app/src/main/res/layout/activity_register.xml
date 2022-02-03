@@ -68,7 +68,7 @@
                     android:layout_below="@id/emailTv"
                     android:layout_marginTop="-5dp"
                     android:background="@color/transparent"
-                    android:hint="Email"
+                    android:hint="E-mail"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     />

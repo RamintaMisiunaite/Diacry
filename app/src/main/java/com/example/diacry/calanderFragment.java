@@ -2,6 +2,7 @@ package com.example.diacry;
 
 import android.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import com.github.sundeepk.compactcalendarview.domain.Event;
 import android.os.Bundle;
@@ -93,6 +94,7 @@ public class calanderFragment extends Fragment {
             @Override
             public void onDayClick(Date dateClicked) {
                 Toast.makeText(getActivity(), "day", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(),DayActivity.class));
                 // actual functionality
             }
 

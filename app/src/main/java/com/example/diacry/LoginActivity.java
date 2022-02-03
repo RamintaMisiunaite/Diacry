@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText emailEt, pswEt;
     String email, psw;
-    Button signIn, submit;
+    Button redirectToReg, submit, forgotPsw;
     FirebaseAuth fAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            getSupportActionBar().setTitle("LOGIN");
+            getSupportActionBar().setTitle("Log In");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeButtonEnabled(true);
         }
@@ -39,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         emailEt = findViewById(R.id.emailEt);
         pswEt = findViewById(R.id.pswEt);
         submit = findViewById(R.id.submit_login);
+        redirectToReg = findViewById(R.id.login_reg);
+        forgotPsw = findViewById(R.id.forgot_psw);
         fAuth = FirebaseAuth.getInstance();
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -73,5 +75,31 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        redirectToReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openRegActivity();
+            }
+        });
+
+        forgotPsw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openForgotPsw();
+            }
+        });
+
+    }
+
+    public void openRegActivity(){
+        Intent intent = new Intent(this, registerActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void openForgotPsw(){
+        Intent intent = new Intent(this, ForgotPswActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
