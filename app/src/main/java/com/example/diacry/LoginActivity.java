@@ -46,8 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                email = emailEt.getText().toString();
-                psw = pswEt.getText().toString();
+                email = emailEt.getText().toString().trim();
+                psw = pswEt.getText().toString().trim();
                 if (TextUtils.isEmpty(email)){
                     emailEt.setError("Field is empty");
                     emailEt.requestFocus();

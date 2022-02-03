@@ -62,9 +62,9 @@ public class registerActivity extends AppCompatActivity {
 
         submit.setOnClickListener(v -> {
 
-            usernameHolder = usernameEt.getText().toString();
-            emailHolder = emailEt.getText().toString();
-            pswHolder = pswEt.getText().toString();
+            usernameHolder = usernameEt.getText().toString().trim();
+            emailHolder = emailEt.getText().toString().trim();
+            pswHolder = pswEt.getText().toString().trim();
 
 
             // register user in firebase
