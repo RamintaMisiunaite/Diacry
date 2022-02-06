@@ -7,24 +7,41 @@
     tools:context=".DayActivity"
     android:background="@color/grey">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <ImageView
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/flag"
-            android:layout_marginRight="200dp"
-            android:layout_marginLeft="-10dp"
-            />
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="260dp"
+                android:layout_height="104dp"
+                android:id="@+id/flag"
+                android:layout_marginStart="-10dp"
+                android:src="@drawable/flag" />
+
+            <TextView
+                android:layout_width="260dp"
+                android:layout_height="54dp"
+                android:text="Feb 02"
+                android:textColor="@color/black"
+                android:textSize="35sp"
+                android:layout_marginTop="35dp"
+                android:layout_marginStart="65dp"
+                />
+        </RelativeLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/tv_container"
-            android:text="sdijicnsdjcn"
+            android:text="Rate intensity of crying:"
             android:layout_marginTop="50dp"
             android:paddingVertical="20dp"
+            android:layout_marginHorizontal="50dp"
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="@color/black"
@@ -34,12 +51,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingVertical="20dp">
+            android:paddingTop="30dp"
+            android:paddingBottom="50dp">
             <ImageButton
                 android:layout_width="80dp"
                 android:layout_height="90dp"
-                android:background="@drawable/round_button"
+                android:background="@drawable/tear_button"
                 android:src="@drawable/tear1"
+                android:id="@+id/tear1"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:layout_weight="1"
@@ -49,8 +68,9 @@
             <ImageButton
                 android:layout_width="80dp"
                 android:layout_height="90dp"
-                android:background="@drawable/round_button"
+                android:background="@drawable/tear_button"
                 android:src="@drawable/tear2"
+                android:id="@+id/tear2"
                 android:scaleType="centerInside"
                 android:adjustViewBounds="true"
                 android:layout_weight="1"
@@ -60,8 +80,9 @@
             <ImageButton
                 android:layout_width="80dp"
                 android:layout_height="90dp"
-                android:background="@drawable/round_button"
+                android:background="@drawable/tear_button"
                 android:src="@drawable/tear3"
+                android:id="@+id/tear3"
                 android:scaleType="centerInside"
                 android:adjustViewBounds="true"
                 android:layout_weight="1"
@@ -76,11 +97,38 @@
             android:layout_height="wrap_content"
             android:background="@drawable/tv_container"
             android:text="Add notes"
+            android:layout_marginHorizontal="50dp"
             android:paddingVertical="20dp"
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="@color/black"
             />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter here"
+            android:id="@+id/notesEt"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="22sp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:id="@+id/addBt"
+            android:layout_marginLeft="300dp"
+            android:background="@color/transparent"
+            android:textColor="@color/purple"
+            android:visibility="gone"
+            />
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView"
+            android:layout_marginHorizontal="20dp"
+            android:background="@color/white"
+            android:layout_marginTop="20dp"/>
 
     </LinearLayout>
 
