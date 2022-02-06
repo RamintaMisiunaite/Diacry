@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_calander" />
     <fragment
         android:id="@+id/tipsFragment"
-        android:name="com.example.diacry.tipsFragment"
+        android:name="com.example.diacry.FeedFragment"
         android:label="fragment_tips"
-        tools:layout="@layout/fragment_tips" />
+        tools:layout="@layout/fragment_feed" />
     <fragment
         android:id="@+id/statsFragment"
         android:name="com.example.diacry.statsFragment"

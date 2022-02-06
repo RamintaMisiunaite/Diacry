@@ -6,15 +6,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -68,7 +64,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.tipsFragment:
-                        selectedFragment = new tipsFragment();
+                        selectedFragment = new FeedFragment();
                         getSupportActionBar().setTitle("Tips");
                         break;
                     case R.id.calanderFragment:
