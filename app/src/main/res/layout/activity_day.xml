@@ -11,14 +11,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/llMain">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:layout_width="260dp"
-                android:layout_height="104dp"
+                android:layout_width="200dp"
+                android:layout_height="94dp"
                 android:id="@+id/flag"
                 android:layout_marginStart="-10dp"
                 android:src="@drawable/flag" />
@@ -29,8 +30,8 @@
                 android:text="Feb 02"
                 android:textColor="@color/black"
                 android:textSize="35sp"
-                android:layout_marginTop="35dp"
-                android:layout_marginStart="65dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="45dp"
                 />
         </RelativeLayout>
 
@@ -96,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/tv_container"
-            android:text="Add notes"
+            android:text="Would you like to elaborate on why you are feeling that way?"
             android:layout_marginHorizontal="50dp"
             android:paddingVertical="20dp"
             android:gravity="center"
@@ -120,18 +121,11 @@
             android:layout_marginLeft="300dp"
             android:background="@color/transparent"
             android:textColor="@color/purple"
-            android:visibility="gone"
             />
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/listView"
-            android:layout_marginHorizontal="20dp"
-            android:background="@color/white"
-            android:layout_marginTop="20dp"/>
+
+
+
 
     </LinearLayout>
-
-
 
 </ScrollView>

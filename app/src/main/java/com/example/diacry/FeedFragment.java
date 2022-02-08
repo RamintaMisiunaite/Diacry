@@ -135,7 +135,7 @@ public class FeedFragment extends Fragment {
         protected Exception doInBackground(Integer... integers) {
 
             try {
-                URL url = new URL("https://trauma.blog.yorku.ca/category/news/feed");
+                URL url = new URL("https://www.washingtonpost.com/discussions/2018/10/12/washington-post-rss-feeds/");
 
                 XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
                 factory.setNamespaceAware(false);
