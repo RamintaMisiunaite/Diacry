@@ -47,23 +47,56 @@ public class DayActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, list);
 
         tear1.setOnClickListener(new View.OnClickListener() {
+            int check = 1;
             @Override
             public void onClick(View view) {
-                tear1.setBackgroundResource(R.drawable.tear_buttons_pressed);
+                    if (check == 1) {
+                        tear1.setBackgroundResource(R.drawable.tear_buttons_pressed);
+                        check = 0;
+                        tear2.setClickable(false);
+                        tear3.setClickable(false);
+                    } else {
+                        tear1.setBackgroundResource(R.drawable.tear_button);
+                        check = 1;
+                        tear2.setClickable(true);
+                        tear3.setClickable(true);
+                    }
                 // pazymet burbuliuka calendoriuj
                 // idet i duombaze
             }
         });
         tear2.setOnClickListener(new View.OnClickListener() {
+            int check = 1;
             @Override
             public void onClick(View view) {
-                tear2.setBackgroundResource(R.drawable.tear_buttons_pressed);
+                if (check == 1) {
+                    tear2.setBackgroundResource(R.drawable.tear_buttons_pressed);
+                    check = 0;
+                    tear1.setClickable(false);
+                    tear3.setClickable(false);
+                } else {
+                    tear2.setBackgroundResource(R.drawable.tear_button);
+                    check = 1;
+                    tear1.setClickable(true);
+                    tear3.setClickable(true);
+                }
             }
         });
         tear3.setOnClickListener(new View.OnClickListener() {
+            int check = 1;
             @Override
             public void onClick(View view) {
-                tear3.setBackgroundResource(R.drawable.tear_buttons_pressed);
+                if (check == 1) {
+                    tear3.setBackgroundResource(R.drawable.tear_buttons_pressed);
+                    check = 0;
+                    tear1.setClickable(false);
+                    tear2.setClickable(false);
+                } else {
+                    tear3.setBackgroundResource(R.drawable.tear_button);
+                    check = 1;
+                    tear1.setClickable(true);
+                    tear2.setClickable(true);
+                }
             }
         });
 
@@ -76,7 +109,7 @@ public class DayActivity extends AppCompatActivity {
                        LinearLayout.LayoutParams.MATCH_PARENT,
                        LinearLayout.LayoutParams.MATCH_PARENT
                );
-               params.setMargins(20,0,20,0);
+               params.setMargins(60,0,60,0);
                tv.setLayoutParams(params);
                tv.setTextSize(22);
                tv.setTextColor(Color.parseColor("#000000"));
