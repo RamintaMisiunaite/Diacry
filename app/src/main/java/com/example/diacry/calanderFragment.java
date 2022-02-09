@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ public class calanderFragment extends Fragment {
 
     CompactCalendarView compactCalendar;
     Context context;
+    TextView monthTv;
+    ImageButton backBt, nextBt;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
 
     // TODO: Rename parameter arguments, choose names that match
@@ -82,26 +85,48 @@ public class calanderFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_calander, container, false);
 
+        backBt = view.findViewById(R.id.cal_back);
+        nextBt = view.findViewById(R.id.cal_next);
+        monthTv = view.findViewById(R.id.monthTv);
+
         compactCalendar = view.findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
+        SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
+
 
         //Set an event for Teachers' Professional Day 2016 which is 21st of October
 
         Event ev1 = new Event(Color.parseColor("#613DC1"), 1643556000000L, "Teachers' Professional Day");
         compactCalendar.addEvent(ev1);
+        monthTv.setText(dateFormatForMonth.format(compactCalendar.getFirstDayOfCurrentMonth()));
 
         compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+
             @Override
             public void onDayClick(Date dateClicked) {
-                Toast.makeText(getActivity(), "day", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getActivity(),DayActivity.class));
                 // actual functionality
             }
 
             @Override
             public void onMonthScroll(Date firstDayOfNewMonth) {
-                Toast.makeText(getActivity(), "month", Toast.LENGTH_SHORT).show();
-                // actual functionality
+                monthTv.setText(dateFormatForMonth.format(firstDayOfNewMonth));
+            }
+        });
+
+
+
+        backBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                compactCalendar.scrollLeft();
+            }
+        });
+
+        nextBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                compactCalendar.scrollRight();
             }
         });
 
