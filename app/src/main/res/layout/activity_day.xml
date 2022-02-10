@@ -14,26 +14,17 @@
         android:orientation="vertical"
         android:id="@+id/llMain">
 
-        <RelativeLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="94dp"
-                android:id="@+id/flag"
-                android:layout_marginStart="-10dp"
-                android:src="@drawable/flag" />
+            android:layout_height="wrap_content"
+            android:id="@+id/dateTv"
+            android:text=""
+            android:gravity="center"
+            android:paddingTop="40dp"
+            android:textColor="@color/black"
+            android:textSize="22sp"/>
 
-            <TextView
-                android:layout_width="260dp"
-                android:layout_height="54dp"
-                android:text="Feb 02"
-                android:textColor="@color/black"
-                android:textSize="35sp"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="45dp"
-                />
-        </RelativeLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -42,6 +33,7 @@
             android:text="Rate intensity of crying:"
             android:layout_marginTop="50dp"
             android:paddingVertical="20dp"
+            android:paddingHorizontal="20dp"
             android:layout_marginHorizontal="50dp"
             android:gravity="center"
             android:textSize="20sp"
@@ -52,8 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="30dp"
-            android:paddingBottom="50dp">
+            android:paddingTop="30dp">
             <ImageButton
                 android:layout_width="80dp"
                 android:layout_height="90dp"
@@ -92,6 +83,37 @@
                 />
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="50dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Light"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Moderate"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Heavy"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -100,6 +122,7 @@
             android:text="Would you like to elaborate on why you are feeling that way?"
             android:layout_marginHorizontal="50dp"
             android:paddingVertical="20dp"
+            android:paddingHorizontal="20dp"
             android:gravity="center"
             android:textSize="20sp"
             android:textColor="@color/black"
@@ -111,18 +134,16 @@
             android:hint="Enter here"
             android:id="@+id/notesEt"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginVertical="20dp"
             android:textSize="22sp"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add"
-            android:id="@+id/addBt"
-            android:layout_marginLeft="300dp"
-            android:background="@color/transparent"
-            android:textColor="@color/purple"
-            />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Done"
+            android:layout_marginHorizontal="50dp"
+            android:background="@drawable/tv_container"/>
 
 
 

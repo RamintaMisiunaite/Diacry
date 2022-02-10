@@ -3,6 +3,7 @@ package com.example.diacry;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -20,8 +21,7 @@ import java.util.ArrayList;
 public class DayActivity extends AppCompatActivity {
 
     ImageButton tear1, tear2,tear3;
-    Button addBt;
-    TextView notesTv;
+    TextView dateTv;
     EditText notesEt;
     LinearLayout linearLayout;
     @Override
@@ -40,8 +40,8 @@ public class DayActivity extends AppCompatActivity {
         tear2 = findViewById(R.id.tear2);
         tear3 = findViewById(R.id.tear3);
         notesEt = findViewById(R.id.notesEt);
-        addBt = findViewById(R.id.addBt);
         linearLayout = findViewById(R.id.llMain);
+        dateTv = findViewById(R.id.dateTv);
         ArrayList<String> list = new ArrayList<String>();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, list);
@@ -100,22 +100,9 @@ public class DayActivity extends AppCompatActivity {
             }
         });
 
-       addBt.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               TextView tv = new TextView(getApplicationContext());
-               tv.setText(notesEt.getText().toString().trim() + "\n");
-               LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                       LinearLayout.LayoutParams.MATCH_PARENT,
-                       LinearLayout.LayoutParams.MATCH_PARENT
-               );
-               params.setMargins(60,0,60,0);
-               tv.setLayoutParams(params);
-               tv.setTextSize(22);
-               tv.setTextColor(Color.parseColor("#000000"));
-               linearLayout.addView(tv);
-           }
-       });
+        Intent intent = getIntent();
+        String date = intent.getStringExtra("date");
+        dateTv.setText(date);
 
 
     }

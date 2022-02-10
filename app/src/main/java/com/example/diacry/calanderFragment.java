@@ -92,6 +92,7 @@ public class calanderFragment extends Fragment {
         compactCalendar = view.findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
         SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
+        SimpleDateFormat dateFormatForDay = new SimpleDateFormat("MMM dd", Locale.getDefault());
 
 
         //Set an event for Teachers' Professional Day 2016 which is 21st of October
@@ -104,8 +105,10 @@ public class calanderFragment extends Fragment {
 
             @Override
             public void onDayClick(Date dateClicked) {
-                startActivity(new Intent(getActivity(),DayActivity.class));
-                // actual functionality
+                String date = dateFormatForDay.format(dateClicked);
+                Intent intent = new Intent(getActivity(),DayActivity.class);
+                intent.putExtra("date",date);
+                startActivity(intent);
             }
 
             @Override
@@ -113,8 +116,6 @@ public class calanderFragment extends Fragment {
                 monthTv.setText(dateFormatForMonth.format(firstDayOfNewMonth));
             }
         });
-
-
 
         backBt.setOnClickListener(new View.OnClickListener() {
             @Override
