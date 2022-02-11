@@ -15,5 +15,6 @@
     <color name="black">#FF000000</color>
     <color name="transparent">#00000000</color>
     <color name="grey">#EDEBEB</color>
+    <color name="menu_blue">#5976d6</color>
 
 </resources>

@@ -15,15 +15,23 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.github.sundeepk.compactcalendarview.domain.Event;
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+
 
 import java.util.ArrayList;
 
 public class DayActivity extends AppCompatActivity {
 
     ImageButton tear1, tear2,tear3;
+    Button doneBt;
     TextView dateTv;
     EditText notesEt;
     LinearLayout linearLayout;
+    CompactCalendarView compactCalendar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +50,8 @@ public class DayActivity extends AppCompatActivity {
         notesEt = findViewById(R.id.notesEt);
         linearLayout = findViewById(R.id.llMain);
         dateTv = findViewById(R.id.dateTv);
+        doneBt = findViewById(R.id.done_day);
+        compactCalendar = findViewById(R.id.compactcalendar_view);
         ArrayList<String> list = new ArrayList<String>();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, list);
@@ -102,7 +112,25 @@ public class DayActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String date = intent.getStringExtra("date");
+        long dateInMills = intent.getLongExtra("dateInMills", 0);
         dateTv.setText(date);
+
+        doneBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+//                Event ev = new Event(Color.parseColor("#613DC1"), dateInMills, "Cried");
+//                compactCalendar.addEvent(ev);
+//                Event ev = new Event(Color.parseColor("#613DC1"), 1644451200000L, "Cried");
+//                compactCalendar.addEvent(ev);
+//                  kai manually idedi veikia, bet per api ne bbz kdl
+
+             //   Toast.makeText(getApplicationContext(), "date: " + dateInMills, Toast.LENGTH_SHORT).show();
+                // gerai perduoda laika
+
+
+            }
+        });
 
 
     }

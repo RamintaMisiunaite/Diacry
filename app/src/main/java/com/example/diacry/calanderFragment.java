@@ -10,6 +10,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +21,10 @@ import android.widget.Toast;
 
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -35,6 +38,8 @@ public class calanderFragment extends Fragment {
     Context context;
     TextView monthTv;
     ImageButton backBt, nextBt;
+    long timeInMillis;
+
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM- yyyy", Locale.getDefault());
 
     // TODO: Rename parameter arguments, choose names that match
@@ -93,21 +98,38 @@ public class calanderFragment extends Fragment {
         compactCalendar.setUseThreeLetterAbbreviation(true);
         SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMMM yyyy", Locale.getDefault());
         SimpleDateFormat dateFormatForDay = new SimpleDateFormat("MMM dd", Locale.getDefault());
+        SimpleDateFormat dateFormatForFullDate = new SimpleDateFormat("yyyy/MM/dd");
+
 
 
         //Set an event for Teachers' Professional Day 2016 which is 21st of October
 
         Event ev1 = new Event(Color.parseColor("#613DC1"), 1643556000000L, "Teachers' Professional Day");
         compactCalendar.addEvent(ev1);
+
+
+
+
         monthTv.setText(dateFormatForMonth.format(compactCalendar.getFirstDayOfCurrentMonth()));
+
 
         compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
 
             @Override
             public void onDayClick(Date dateClicked) {
                 String date = dateFormatForDay.format(dateClicked);
+                String fullDateStr = dateFormatForFullDate.format(dateClicked);
+                try {
+                    Date fullDate = dateFormatForFullDate.parse(fullDateStr);
+                    timeInMillis = fullDate.getTime();
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
                 Intent intent = new Intent(getActivity(),DayActivity.class);
                 intent.putExtra("date",date);
+                intent.putExtra("dateInMills", timeInMillis);
                 startActivity(intent);
             }
 
@@ -134,4 +156,6 @@ public class calanderFragment extends Fragment {
 
         return view;
     }
+
+
 }
